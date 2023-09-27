@@ -1,5 +1,3 @@
-
-
 public class User {
     protected String name, email, phoneNumber, username, password;
 
@@ -9,13 +7,59 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.username = username;
         this.password = password;
-    } 
+    }
 
+    // Setters
     public void setName(String name) {
         this.name = name;
     }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
+    // Getters
     public String getName() {
         return this.name;
+    }
+    public String getEmail() {
+        return this.email;
+    }
+    public String getPhoneNumber() {
+        return this.phoneNumber;
+    }
+    public String getUsername() {
+        return this.username;
+    }
+    public String getPassword() {
+        return this.password;
+    }
+    
+    public void updatePersonalInformation() {
+        System.out.println(name + " has updated personal information.");
+    }
+
+    public void lodgeEnquiry(String enquiry, Administrator manager) {
+        System.out.println(name + " lodged an enquiry to administrator: " + enquiry);
+        manager.lodgeEnquiry(enquiry); // Adds the enquiry to the manager's list
+    }
+    
+
+    public boolean login(String username, String password) {
+        if(this.username.equals(username) && this.password.equals(password)) {
+            System.out.println(name + " logged in successfully.");
+            return true;
+        } else {
+            System.out.println(name + " failed to log in.");
+            return false;
+        }
     }
 }
