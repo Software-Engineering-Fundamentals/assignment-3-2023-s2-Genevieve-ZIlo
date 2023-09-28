@@ -7,7 +7,7 @@ public class Course {
     public Date startDate; // changed from 'LocalDate' to make it more intuitive
     public Double duration;
     public Module[] modules; // changed from 'module' to make it plural
-    public Quiz[] quizzes;
+    public Quiz[] quizzes; //added a quiz class
 
     // Inner class to represent a form
     public class CourseForm {
