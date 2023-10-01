@@ -1,6 +1,8 @@
 public class User {
+    // Fields to store user information
     protected String name, email, phoneNumber, username, password;
 
+    // Constructor to initialize user information
     public User(String name, String email, String phoneNumber, String username, String password) {
         this.name = name;
         this.email = email;
@@ -9,7 +11,7 @@ public class User {
         this.password = password;
     }
 
-    // Setters
+    // Setters to update individual user information
     public void setName(String name) {
         this.name = name;
     }
@@ -26,7 +28,7 @@ public class User {
         this.password = password;
     }
 
-    // Getters
+    // Getters to retrieve individual user information
     public String getName() {
         return this.name;
     }
@@ -42,17 +44,19 @@ public class User {
     public String getPassword() {
         return this.password;
     }
-    
+
+    // Method to inform that the user has updated personal information
     public void updatePersonalInformation() {
         System.out.println(name + " has updated personal information.");
     }
 
+    // Method for a user to lodge an enquiry to an administrator
     public void lodgeEnquiry(String enquiry, Administrator manager) {
         System.out.println(name + " lodged an enquiry to administrator: " + enquiry);
         manager.lodgeEnquiry(enquiry); // Adds the enquiry to the manager's list
     }
-    
 
+    // Method to attempt user login
     public boolean login(String username, String password) {
         if(this.username.equals(username) && this.password.equals(password)) {
             System.out.println(name + " logged in successfully.");

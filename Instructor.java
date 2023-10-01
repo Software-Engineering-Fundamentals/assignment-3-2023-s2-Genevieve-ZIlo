@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Instructor extends User {
+    // Fields specific to Instructor
     private ArrayList<Course> coursesTeaching;
     private PaymentDetail paymentDetails;  // Updated to type PaymentDetail
 
@@ -13,17 +14,19 @@ public class Instructor extends User {
         this.coursesTeaching = new ArrayList<>();
         this.paymentDetails = new PaymentDetail(paymentMethod, amount);
     }
+
+    // Getter for PaymentDetail
     public PaymentDetail getPaymentDetails() {
         return paymentDetails;
     }
-    // createCourse method
+
+    // Method to create a new course
     public void createCourse(String courseID, String topic, String instructorName, java.sql.Date date, Double duration, Module[] module, Quiz[] quizzes) {
         Course newCourse = new Course(courseID, topic, instructorName, date, duration, module, quizzes);
         coursesTeaching.add(newCourse);
     }
-    
 
-    // deleteCourse method
+    // Method to delete a course by its ID
     public void deleteCourse(String courseID) {
         for(int i = 0; i < coursesTeaching.size(); i++) {
             if(coursesTeaching.get(i).courseID.equals(courseID)) {
@@ -33,18 +36,21 @@ public class Instructor extends User {
         }
         System.out.println("Course with ID: " + courseID + " not found.");
     }
-    
-    protected class PaymentDetail {  // Moved inside Instructor class
+
+    // Inner class to store payment details for the Instructor
+    protected class PaymentDetail {
         private String paymentMethod;
         private double amount;
         private Date transactionDate;
 
+        // Constructor for PaymentDetail
         public PaymentDetail(String paymentMethod, double amount) {
             this.paymentMethod = paymentMethod;
             this.amount = amount;
             this.transactionDate = new Date();  // Assuming this uses java.util.Date
         }
 
+        // Getter and setter methods for PaymentDetail fields
         public String getPaymentMethod() {
             return paymentMethod;
         }
