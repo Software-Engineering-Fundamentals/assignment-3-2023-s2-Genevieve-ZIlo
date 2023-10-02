@@ -4,7 +4,7 @@ import java.util.Date;
 public class Instructor extends User {
     // Fields specific to Instructor
     private ArrayList<Course> coursesTeaching;
-    private PaymentDetail paymentDetails;  // Updated to type PaymentDetail
+    private PaymentDetail paymentDetails;
 
     // Constructor for Instructor
     public Instructor(String name, String email, String phoneNumber, String username, String password, String paymentMethod, double amount) {
@@ -47,7 +47,7 @@ public class Instructor extends User {
         public PaymentDetail(String paymentMethod, double amount) {
             this.paymentMethod = paymentMethod;
             this.amount = amount;
-            this.transactionDate = new Date();  // Assuming this uses java.util.Date
+            this.transactionDate = new Date();
         }
 
         // Getter and setter methods for PaymentDetail fields

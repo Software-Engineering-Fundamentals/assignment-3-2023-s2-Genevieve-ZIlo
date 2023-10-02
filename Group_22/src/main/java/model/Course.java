@@ -4,11 +4,11 @@ public class Course {
     // Fields to store course information
     public String courseID;
     public String topic;
-    public String instructorName; // changed from 'instructor' to make it clear
-    public Date startDate; // changed from 'LocalDate' to make it more intuitive
+    public String instructorName;
+    public Date startDate; 
     public Double duration;
-    public Module[] modules; // changed from 'module' to make it plural
-    public Quiz[] quizzes; // added a quiz class
+    public Module[] modules;
+    public Quiz[] quizzes;
 
     // Inner class to represent a form
     public class CourseForm {

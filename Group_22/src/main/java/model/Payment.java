@@ -29,7 +29,7 @@ public class Payment {
 
     // Helper method to simulate validation
     private boolean isValid(String paymentID) {
-        // Simple validation for this example; can be replaced with actual logic
+        // Simple validation for this example
         return paymentID != null && !paymentID.isEmpty();
     }
 }
